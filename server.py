@@ -25,12 +25,6 @@ def voice():
 
     asyncio.run(generate())
 
-    def cleanup():
-        try:
-            os.remove(output_path)
-        except:
-            pass
-
     return send_file(output_path, mimetype="audio/mpeg", as_attachment=False, download_name="response.mp3")
 
 if __name__ == "__main__":
